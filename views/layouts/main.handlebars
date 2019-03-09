@@ -101,10 +101,11 @@
                 //prevent page refresh on form submit
                 e.preventDefault();
                 //post user login info to login auth route
-                axios.post("/auth/login", {
+                var user = {
                     email: $("#email").val(),
                     password: $("#password").val(),
-                })
+                }
+                axios.post("/auth/login", user)
                     .then(function (resp) {
                         //hide modal footer
                         $("#modalFooter").hide();
@@ -131,7 +132,7 @@
             //submit register form
             $("#submit").on("click", function (e) {
                 //prevent page refresh on form submit
-                
+
                 //post user info to registers auth route
                 var p1 = $("#password1").val();
                 var p2 = $("#password2").val();
@@ -167,7 +168,7 @@
             })
             $("#signOut").click(function (e) {
                 //e.preventDefault();
-                document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+                document.cookie.split(";").forEach(function (c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
 
             })
         })
