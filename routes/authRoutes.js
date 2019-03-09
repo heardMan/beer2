@@ -95,7 +95,7 @@ router.post("/register", function (req, res) {
         models.User.create(userInstance)
             .then(function (resp) {
                 //send success message
-                res.json({ message: "Creation Sucess!", id: resp.id }).redirect("/login");
+                res.json({ message: "Creation Sucess!", id: resp.id });
             })
             .catch(function (err) {
                 //send error message
