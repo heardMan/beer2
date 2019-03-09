@@ -105,6 +105,7 @@
                     email: $("#email").val(),
                     password: $("#password").val(),
                 }
+                console.log(user);
                 axios.post("/auth/login", user)
                     .then(function (resp) {
                         //hide modal footer

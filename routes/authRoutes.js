@@ -45,9 +45,9 @@ router.post("/login", function (req, res) {
                 );
                 //send authorization and user info cookies
                 res
-                    .cookie("token", token)
-                    .status(200)
-                    .send("cookie set");
+                    .cookie("token", token);
+                    // .status(200)
+                    // .send("cookie set");
             } else {
                 //send error message of incorrect password
                 routeHelpers.sendJsonError(res, new Error("WRONG PASSWORD"), 401);
