@@ -167,7 +167,8 @@
             })
             $("#signOut").click(function (e) {
                 //e.preventDefault();
-                axios.post("/logout");
+                document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+
             })
         })
     </script>

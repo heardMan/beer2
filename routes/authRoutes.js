@@ -97,7 +97,7 @@ router.post("/register", function (req, res) {
             })
             .catch(function (err) {
                 //send error message
-                //routeHelpers.sendJsonError(res, err);
+                routeHelpers.sendJsonError(res, err);
             });
     }
 
@@ -127,8 +127,8 @@ router.post("/register", function (req, res) {
         });
     }
     
-    //createUser(userInstance);
-    getpoliticians(userInstance, createUser);
+    createUser(userInstance);
+    //getpoliticians(userInstance, createUser);
 
 
 });
