@@ -21,6 +21,7 @@ router.get("/profile", verifyToken, function (req, res) {
       return "info"
     } 
   }
+
   //get use
   db.User.findOne({
     where: {
@@ -43,9 +44,39 @@ router.get("/profile", verifyToken, function (req, res) {
     ]
   })
   .then(function (resp) {
+
+
+    function getpoliticians(userInstance, next) {
+      var baseURL = `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.civicInfoAPIKey}`;
+      var formattedAddress = `&address=${userInstance.address1} ${userInstance.address2} ${userInstance.city} ${userInstance.state} ${userInstance.zip}`;
+      var roles = `&roles=legislatorUpperBody&roles=legislatorLowerBody`
+      var url = baseURL + formattedAddress + roles;
+      request(url, function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+              //console.log("body: " + body);
+          }
+          var data = JSON.parse(body);
+          //console.log(url);
+          //console.log(data.divisions);
+          var divisions = Object.keys(data.divisions);
+          var district = divisions[1].split(":")[divisions.length-1];
+          
+          
+          
+          userInstance.senator1 = data.officials[0].name;
+          userInstance.senator2 = data.officials[1].name;
+          userInstance.usRepresentative = data.officials[2].name;
+          userInstance.congressionalDistrict = district;
+          console.log('userinstance____'+userInstance);
+          next(userInstance);
+      });
+  }
+
+    
+    function getReps(resp){
     //parse response
-    var data = resp.dataValues;
-    //console.log(data.state);
+    var data = resp;
+    console.log(data);
     //get contact forms
     var houseurl = `https://api.propublica.org/congress/v1/members/house/${data.state}/${data.congressionalDistrict}/current.json`;
     var senateurl = `https://api.propublica.org/congress/v1/members/senate/${data.state}/current.json`;
@@ -116,12 +147,20 @@ router.get("/profile", verifyToken, function (req, res) {
   }).catch(function(err){
     if(err) throw err;
   });
+
+  }
+//
+getpoliticians(resp.dataValues, getReps)
+getReps(resp);
+
           
   })
   .catch(function (err) {
     //log error to console
     console.log(err);
   });
+
+
     // .then(function (resp) {
     //   //parse response
     //   var data = resp.dataValues;
