@@ -50,10 +50,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             required: false
         },
-        congressionalDistrict: {
-          type: DataTypes.STRING,
-          required: false
-      },
+        
         phone: DataTypes.STRING
     });
     return User;
