@@ -66,7 +66,7 @@
 
     <script>
         $(document).ready(function () {
-           
+
             //define sign in link
             var signInLink = `<li class="nav-item">
                                 <a class="nav-link" href="/login">Sign In / Register</a>
@@ -93,7 +93,7 @@
                 //if user not logged append appropriate links to navbar
                 $("#navLinks").append(billsLink + signInLink)
             }
-            
+
 
 
             //submit sign in form
@@ -135,19 +135,20 @@
                 //post user info to registers auth route
                 var p1 = $("#password1").val();
                 var p2 = $("#password2").val();
+                var user = {
+                    firstName: $("#firstName").val().trim(),
+                    lastName: $("#lastName").val().trim(),
+                    address1: $("#address1").val().trim(),
+                    address2: $("#address2").val().trim(),
+                    city: $("#city").val().trim(),
+                    state: $("#state").val().trim(),
+                    zip: $("#zip").val().trim(),
+                    email: $("#email").val().trim(),
+                    password1: $("#password1").val().trim(),
+                    password2: $("#password2").val().trim(),
+                }
                 if (p1 === p2) {
-                    axios.post("/auth/register", {
-                        firstName: $("#firstName").val().trim(),
-                        lastName: $("#lastName").val().trim(),
-                        address1: $("#address1").val().trim(),
-                        address2: $("#address2").val().trim(),
-                        city: $("#city").val().trim(),
-                        state: $("#state").val().trim(),
-                        zip: $("#zip").val().trim(),
-                        email: $("#email").val().trim(),
-                        password1: $("#password1").val().trim(),
-                        password2: $("#password2").val().trim(),
-                    })
+                    axios.post("/auth/register", user)
                         .then(function (resp) {
                             //redirect to the login page if registration successful
                             window.location.assign("/login");
@@ -162,7 +163,7 @@
                     $("#password2").val("");
                 }
             })
-            $("#signOut").click(function(e){
+            $("#signOut").click(function (e) {
                 //e.preventDefault();
                 axios.post("/logout");
             })

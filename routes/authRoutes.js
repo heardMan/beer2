@@ -58,6 +58,7 @@ router.post("/login", function (req, res) {
 
 // register a new user
 router.post("/register", function (req, res) {
+    console.log(erq.body);
     //parse request
     var user = {
         firstName: req.body.firstName,

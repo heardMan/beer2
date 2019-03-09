@@ -57,7 +57,7 @@ router.get("/", function (req, res) {
             });
           }
           
-          console.log(bills);
+          //console.log(bills);
           res.render("index", bills);
         })
         .catch(function (err) {
