@@ -136,15 +136,18 @@ router.get("/profile", verifyToken, function (req, res) {
       .then(function(resp){
         //console.log(resp.data.url);
       }).catch(function(err){
+        console.log(err);
         if(err) throw err;
       });
 
     res.render("profile", data);
     }).catch(function(err){
+      console.log(err);
       if(err) throw err;
     });
     
   }).catch(function(err){
+    console.log(err);
     if(err) throw err;
   });
 
