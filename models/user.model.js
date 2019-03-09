@@ -24,7 +24,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         address2: {
             type: DataTypes.STRING,
-            required: true
+            
         },
         city: {
             type: DataTypes.STRING,

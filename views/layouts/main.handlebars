@@ -131,7 +131,7 @@
             //submit register form
             $("#submit").on("click", function (e) {
                 //prevent page refresh on form submit
-                e.preventDefault();
+                
                 //post user info to registers auth route
                 var p1 = $("#password1").val();
                 var p2 = $("#password2").val();
@@ -163,6 +163,7 @@
                     $("#password1").val("");
                     $("#password2").val("");
                 }
+                e.preventDefault();
             })
             $("#signOut").click(function (e) {
                 //e.preventDefault();
