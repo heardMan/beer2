@@ -14,6 +14,7 @@ router.post("/login", function (req, res) {
         email: req.body.email,
         password: req.body.password
     };
+    console.log(user);
     //find user info based on provided email
     models.User.findOne({
         where: {
