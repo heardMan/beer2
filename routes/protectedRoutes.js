@@ -40,7 +40,6 @@ router.get("/profile", verifyToken, function (req, res) {
       "senator1",
       "senator2",
       "usRepresentative",
-      "congressionalDistrict"
     ]
   })
   .then(function (resp) {
