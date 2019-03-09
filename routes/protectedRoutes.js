@@ -153,7 +153,7 @@ router.get("/profile", verifyToken, function (req, res) {
 
   }
 //
-getpoliticians(resp.dataValues, getReps)
+//getpoliticians(resp.dataValues, getReps)
 //getReps(resp);
 
           
