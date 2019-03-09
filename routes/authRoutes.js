@@ -58,7 +58,7 @@ router.post("/login", function (req, res) {
 
 // register a new user
 router.post("/register", function (req, res) {
-    console.log(erq.body);
+    console.log(req.body);
     //parse request
     var user = {
         firstName: req.body.firstName,
@@ -125,17 +125,7 @@ router.post("/register", function (req, res) {
             next(userInstance);
         });
     }
-    function createUser(userInstance) {
-        console.log(userInstance.salt, userInstance.hash);
-
-        models.User.create(userInstance)
-            .then(function (resp) {
-                res.json({ message: "Creation Sucess!", id: resp.id })
-            })
-            .catch(function (err) {
-                routeHelpers.sendJsonError(res, err);
-            })
-    }
+    
     //createUser(userInstance);
     getpoliticians(userInstance, createUser);
 
