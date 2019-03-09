@@ -22,6 +22,7 @@ router.post("/login", function (req, res) {
         }
     })
         .then(function (resp) {
+            console.log(resp.dataValues);
             //parse response
             var currentUser = resp.dataValues.id;
             console.log(currentUser);
