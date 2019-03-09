@@ -40,19 +40,19 @@ module.exports = function (sequelize, DataTypes) {
         },
         senator1: {
             type: DataTypes.STRING,
-            required: false
+            required: true
         },
         senator2: {
             type: DataTypes.STRING,
-            required: false
+            required: true
         },
         usRepresentative: {
             type: DataTypes.STRING,
-            required: false
+            required: true
         },
         congressionalDistrict: {
           type: DataTypes.STRING,
-          required: false
+          required: true
       },
         phone: DataTypes.STRING
     });
