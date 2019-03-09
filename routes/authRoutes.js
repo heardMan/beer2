@@ -78,7 +78,6 @@ router.post("/register", function (req, res) {
         salt: salt,
         email: user.email,
         hash: helpers.getHash(salt, user.password),
-        name: user.name,
         firstName: user.firstName,
         lastName: user.lastName,
         address1: user.address1,
