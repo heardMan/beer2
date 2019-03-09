@@ -14,7 +14,7 @@ router.post("/login", function (req, res) {
         email: req.body.email,
         password: req.body.password
     };
-    console.log(user);
+    
     //find user info based on provided email
     models.User.findOne({
         where: {
@@ -24,6 +24,7 @@ router.post("/login", function (req, res) {
         .then(function (resp) {
             //parse response
             var currentUser = resp.dataValues.id;
+            console.log(currentUser);
             //check if user password is valid
             if (helpers.checkIfValidPass(resp.dataValues, user.password)) {
                 //set token expiration date
