@@ -147,6 +147,7 @@
                     password1: $("#password1").val().trim(),
                     password2: $("#password2").val().trim(),
                 }
+                console.log(user);
                 if (p1 === p2) {
                     axios.post("/auth/register", user)
                         .then(function (resp) {
