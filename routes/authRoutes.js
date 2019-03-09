@@ -75,11 +75,11 @@ router.post("/register", function (req, res) {
     var salt = helpers.getSalt();
     //generate user instance
     var userInstance = {
-        salt: salt,
         email: user.email,
-        hash: helpers.getHash(salt, user.password),
         firstName: user.firstName,
         lastName: user.lastName,
+        salt: salt,
+        hash: helpers.getHash(salt, user.password),
         address1: user.address1,
         address2: user.address2,
         city: user.city,
