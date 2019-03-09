@@ -27,11 +27,48 @@
                 <div class="form-row">
                     <p class="mx-auto"><a href="/register">Register</a></p>
                 </div>
+                <div class="form-row">
+                    <p id="forgot" class="mx-auto"><a href="#">Forgot your password?</a></p>
+                </div>
             </form>
         </div>
 
     </div>
 </div>
 <div>
-    
+
 </div>
+<script>
+    $("#forgot").click(function (e) {
+        e.preventDefault();
+        $("#modalFooter").empty();
+         $("#modalBody").empty();
+        //change modal title
+        $("#modalTitle").html("Password Reset");
+        //mutate modal title 
+        $("#modalTitle").addClass("ml-auto pl-3");
+        //define loader animation
+        var spin1 = `<div class="row">
+                        <div class="col-12">
+                            <div class="form-group col-12">
+                                <label>Email</label>
+                                <input type="text" class="form-control" id="email2" placeholder="Email">
+                            </div>
+                        </div>    
+                    </div>`;
+        var resetBtn = `<button class="btn btn-primary mx-auto my-3 btn-block" id="reset">Reset Password</button>`;
+        //add loader animation to modal body
+        $("#modalBody").append(spin1);
+        $("#modalFooter").append(resetBtn);
+        //show modal
+        $("#modal").modal('show');
+
+        $("#reset").click(function(e){
+            e.preventDefault();
+            console.log("clicked");
+            $.post("/reset", {
+                email: $("#email2").val()
+            })
+        })
+    })
+</script>

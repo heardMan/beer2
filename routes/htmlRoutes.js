@@ -3,6 +3,8 @@ var express = require("express");
 var request = require("request");
 var router = express.Router();
 var axios = require("axios");
+var resetPass = require("../email/reset");
+var helpers = require("./helpers/auth.helpers");
 
 // Load index page
 // Load index page
@@ -81,6 +83,43 @@ router.get("/login", function (req, res) {
 });
 router.get("/example", function (req, res) {
   res.render("example");
+});
+
+router.post("/reset", function (req, res){
+  console.log(req.body.email);
+  db.User.findOne({
+    where: {
+      email: req.body.email
+    }
+  })
+  .then(function(resp){
+    var user = resp.dataValues;
+    console.log(user);
+    var newpass = process.env.newpass;
+    var where = {id: user.id}
+    var salt = helpers.getSalt();
+    var hash = helpers.getHash(salt, newpass);
+    db.User.update({
+      salt: salt,
+      hash: hash
+    }, 
+    {
+      where: {
+        id: user.id
+      }
+    })
+    .then(function(resp){
+      console.log(resp);
+
+      resetPass.send(user.email, newpass);
+    })
+    .catch(function(err){
+      if(err) throw err;
+    })
+  })
+  .catch(function(err){
+    if(err) throw err;
+  });
 });
 
 module.exports = router;
