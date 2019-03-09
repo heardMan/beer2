@@ -1,0 +1,94 @@
+.list-group-item {
+  line-height: 2.5;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.main {
+	color: #ca4848b6;
+	font-weight: normal;
+	font-family: 'Ultra', sans-serif;   
+	font-size: 36px;
+	line-height: 42px;
+	text-transform: uppercase;
+	text-shadow: 0 2px white, 0 3px #777;
+}
+
+.background-main {
+  background-image: url("../images/Old_Glory.jpg");
+  background-size: cover;
+  height: 100%;
+
+
+}
+body, html {
+  height: 100%;
+  background-image: url("../images/flag.png");
+  background-size: 100%;
+}
+
+.Error-text {
+	color: #faf6f6;
+	font-weight: normal;
+	font-family: 'Roboto';   
+	font-size: 36px;
+	line-height: 42px;
+	text-transform: uppercase;
+	text-shadow: 0 2px white, 0 3px #777;
+}
+
+.background-datapage {
+  background-image: url("../images/flag.jpg");
+  background-size: cover;
+  height: 100%;
+  margin: 0 auto;
+}
+#cards {
+  /* background-image: url("../images/flag.jpg");
+  background-size: cover; */
+  height: 100%;
+  width: 100%;
+}
+
+#indexJumbo {
+  width: 80%;
+  
+}
+
+.billNum {
+  color: white;
+  background-color: darkred;
+
+}
+
+.cardtitle {
+  background-color: navy;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+.background-error {
+  background-image: url("../images/Bald-egale.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 85%;
+}
