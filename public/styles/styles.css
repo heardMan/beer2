@@ -1,9 +1,11 @@
 .list-group-item {
   line-height: 2.5;
 }
+
 .clearbg{
   opacity: 0.5;
 }
+
 .congress{
   background-size: 100% 250px;
   background-repeat: no-repeat;
@@ -27,7 +29,7 @@
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid ##2c82c9;
+  border-top: 16px solid #2c82c9;
   width: 120px;
   height: 120px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
