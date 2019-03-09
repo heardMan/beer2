@@ -58,7 +58,7 @@ router.post("/login", function (req, res) {
 
 // register a new user
 router.post("/register", function (req, res) {
-    console.log(req.body);
+    //console.log(req.body);
     //parse request
     var user = {
         firstName: req.body.firstName,
@@ -110,8 +110,8 @@ router.post("/register", function (req, res) {
                 //console.log("body: " + body);
             }
             var data = JSON.parse(body);
-            console.log(url);
-            console.log(data.divisions);
+            //console.log(url);
+            //console.log(data.divisions);
             var divisions = Object.keys(data.divisions);
             var district = divisions[1].split(":")[divisions.length-1];
             
