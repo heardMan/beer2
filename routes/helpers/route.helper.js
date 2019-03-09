@@ -11,5 +11,6 @@ module.exports = {
         .json({
             message: err.toString()
         });
+        console.log(err);
     }
 }
