@@ -89,6 +89,7 @@ router.post("/register", function (req, res) {
 
     function createUser(userInstance) {
         //create user in database
+        console.log(userInstance);
         models.User.create(userInstance)
             .then(function (resp) {
                 //send success message
@@ -121,7 +122,7 @@ router.post("/register", function (req, res) {
             userInstance.senator2 = data.officials[1].name;
             userInstance.usRepresentative = data.officials[2].name;
             userInstance.congressionalDistrict = district;
-            console.log(userInstance);
+            
             next(userInstance);
         });
     }
