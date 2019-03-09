@@ -45,7 +45,7 @@ router.get("/profile", verifyToken, function (req, res) {
   .then(function (resp) {
     //parse response
     var data = resp.dataValues;
-    console.log(data.state);
+    //console.log(data.state);
     //get contact forms
     var houseurl = `https://api.propublica.org/congress/v1/members/house/${data.state}/${data.congressionalDistrict}/current.json`;
     var senateurl = `https://api.propublica.org/congress/v1/members/senate/${data.state}/current.json`;
@@ -96,7 +96,7 @@ router.get("/profile", verifyToken, function (req, res) {
         icon: party(rep[0].party)
       }; 
     data.houseRep = houseRep;
-    console.log(data);
+    //console.log(data);
     var senator1url= data.senator2.api_uri;
     var senator1url= data.senator2.api_uri;
     var houseRepurl= data.houseRep.api_uri;
@@ -145,9 +145,9 @@ router.get("/users", function (req, res) {
     .then(function (result) {
       var tempAddress = result.address1 + " " + result.city + " " + result.state;
       var tempString;
-      console.log("old " + tempAddress)
+      //console.log("old " + tempAddress)
       tempAddress = tempAddress.replace(/\s+/g, '%20').toLowerCase();
-      console.log("new " + tempAddress);
+      //console.log("new " + tempAddress);
       address = `&address=1263%20Pacific%20Ave.%20Kansas%20City%20KS`
     })
     .catch(function (err) {
@@ -155,7 +155,7 @@ router.get("/users", function (req, res) {
     })
 })
 router.get("/api/civic", function (req, res) {
-  console.log("civic reached");
+  //console.log("civic reached");
   request(civicQueryURL, function (err, result, body) {
     if (!err && result.statusCode === 200) {
       return JSON.parse(body);
@@ -184,8 +184,8 @@ var senateOptions = {
     'X-API-Key': publicaAPI
   }
 }
-console.log(houseOptions);
-console.log(senateOptions);
+//console.log(houseOptions);
+//console.log(senateOptions);
 // House Bills
 router.get("/api/house", function (req, res) {
   request(houseOptions, function (err, result, body) {
@@ -193,7 +193,7 @@ router.get("/api/house", function (req, res) {
       var parseBody = JSON.parse(body);
       var bills = parseBody.results[0].bills;
       if (bills === undefined) {
-        console.log("house: no bills");
+        //console.log("house: no bills");
         return res.json({
           "bills": "No Upcoming Bills",
         })
@@ -215,7 +215,7 @@ router.get("/api/senate", function (req, res) {
       var parsed = JSON.parse(body);
       var bills = parsed.results[0].bills;
       if (bills === undefined) {
-        console.log("senate: no bills");
+        //console.log("senate: no bills");
         return res.json({
           "bills": "No Upcoming Bills",
         })
@@ -245,7 +245,7 @@ router.get("/api/reps", function (req, res) {
       for (var i = 0; i < reps.length; i++) {
         repsArray.push(reps[i]);
       }
-      console.log(repsArray);
+      //console.log(repsArray);
       return res.json(repsArray);
     }
   })
