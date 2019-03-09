@@ -1,6 +1,29 @@
 .list-group-item {
   line-height: 2.5;
 }
+.clearbg{
+  opacity: 0.5;
+}
+.congress{
+  background-size: 100% 250px;
+  background-repeat: no-repeat;
+  background-image: url("../images/congress.jpeg");
+  
+}
+
+.constitution{
+  background-size: 100% 250px;
+  background-repeat: no-repeat;
+  background-image: url("../images/constitution.jpeg");
+}
+
+.rushmore{
+  background-size: 100% 250px;
+  background-repeat: no-repeat;
+  
+  background-image: url("../images/bg.jpg");
+}
+
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
@@ -37,6 +60,9 @@
   height: 100%;
 
 
+}
+.otherflag{
+  background-image: url("../images/flag.png");
 }
 body, html {
   height: 100%;
@@ -84,6 +110,9 @@ body, html {
   padding-right: 0px;
 }
 
+.cooBlue{
+  background-color: #2c82c9;
+}
 
 .background-error {
   background-image: url("../images/Bald-egale.jpg");

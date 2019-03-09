@@ -1,4 +1,8 @@
-<div class="card">
+<div class="card otherflag">
+    <div class="row">
+        <div class="col-10 cooBlue mx-auto">
+
+        
     <div class="row m-3 m-sm-5">
         <div class="col-sm-12 col-md-9 mx-auto">
             <div class="card rounded-0">
@@ -27,14 +31,16 @@
                 <div class="col-12 col-sm-4 pr-sm-0">
                     <div class="card rounded-0 p-2 ">
                         <div class="card-title text-center">
-                            <p>Senator {{senator1.name}}</p>
+                            <p class="">Senator </p>
+                            <p> {{senator1.name}}</p>
+                            <hr/>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body mt-1">
                             <div class="row">
                                 <div class="col-12"><p>Party: </p></div>
-                                <div class="col-12"><p>{{senator1.icon}}</p></div>
-                                <div class="col-12"><i class="mx-auto fas fa-{{senator1.icon}} fa-3x"></i></div>
-                                <div class="col-12"><p><a href="https://{{senator1.lastName}}.senate.gov/">Connect</a></p></div>
+                                <div class="col-12 text-center"><p>{{senator1.icon}}</p></div>
+                                <div class="col-12 text-center"><i class="mx-auto fas fa-{{senator1.icon}} fa-3x"></i></div>
+                                <div class="col-12 text-center"><p><a href="https://{{senator1.lastName}}.senate.gov/">Connect</a></p></div>
                             </div>
                         </div>
                     </div>
@@ -43,14 +49,15 @@
                 <div class="col-12 col-sm-4 p-sm-0">
                     <div class="card rounded-0 p-2 d-flex ">
                         <div class="card-title text-center border-bottom">
-                            <p>Senator {{senator2.name}}</p>
+                            <p>Senator </p><p> {{senator2.name}}</p>
+                            <hr/>
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-12"><p>Party:</p></div>
-                                <div class="col-12"><p>{{senator2.icon}}</p></div>
-                                <div class="col-12"><i class="mx-auto fas fa-{{senator2.icon}} fa-3x"></i></div>
-                                <div class="col-12"><p><a href="https://{{senator2.lastName}}.senate.gov/">Connect</a></p></div>
+                                <div class="col-12 text-center"><p>Party:</p></div>
+                                <div class="col-12 text-center"><p>{{senator2.icon}}</p></div>
+                                <div class="col-12 text-center"><i class="mx-auto fas fa-{{senator2.icon}} fa-3x"></i></div>
+                                <div class="col-12 text-center"><p><a href="https://{{senator2.lastName}}.senate.gov/">Connect</a></p></div>
                             </div>
                         </div>
                     </div>
@@ -58,14 +65,15 @@
                 <div class="col-12 col-sm-4 pl-sm-0">
                     <div class="card rounded-0 p-2 d-flex ">
                         <div class="card-title text-center">
-                            <p>Representative {{houseRep.name}}</p>
+                            <p>Representative </p><p> {{houseRep.name}}</p>
+                            <hr/>
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-12"><p>Party: </p></div>
-                                <div class="col-12"><p>{{senator2.icon}}</p></div>
-                                <div class="col-12"><i class="mx-auto fas fa-{{houseRep.icon}} fa-3x"></i></div>
-                                <div class="col-12"><p><a href="https://{{houseRep.lastName}}.house.gov/">Connect</a></p></div>
+                                <div class="col-12 text-center"><p>Party: </p></div>
+                                <div class="col-12 text-center"><p>{{senator2.icon}}</p></div>
+                                <div class="col-12 text-center"><i class="mx-auto fas fa-{{houseRep.icon}} fa-3x"></i></div>
+                                <div class="col-12 text-center"><p><a href="https://{{houseRep.lastName}}.house.gov/">Connect</a></p></div>
                             </div>
                         </div>
                     </div>
@@ -158,6 +166,8 @@
 
 
         </div>
+    </div>
+    </div>
     </div>
 </div>
 
