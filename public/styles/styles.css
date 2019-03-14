@@ -19,8 +19,6 @@ body{
 
 
 
-
-
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
@@ -67,6 +65,14 @@ body{
 .register-button {
   box-shadow: 3px 3px 8px #2d3436;
   transform: scale(1.05);
+}
+
+.click-bait{
+  box-shadow: 3px 3px 8px #2d3436;
+}
+
+.click-bait{
+  transform: scale(0.95);
 }
 
 #editProfile:hover {
