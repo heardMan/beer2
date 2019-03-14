@@ -16,14 +16,17 @@
                                 <div class="col-12 col-sm-4 p-3">
 
                                     {{!-- senator 1 card start --}}
-                                    <div class="card rounded-0 p-2 rep-card" style="height: 100%;">
-                                        <div class="card-title text-center">
-                                            <p class="">Senator </p>
+                                    <div class="card border-0 rounded-0  p-0 rep-card" style="height: 100%;">
+                                        <div class="row mx-0 text-center text-white p-2 e-blue">
+                                            <div class="col">
+                                            
                                             <p> {{senator1.name}}</p>
-                                            <hr />
+                                            <p class="">Senator </p>
+                                            </div>
+                                           
                                         </div>
-                                        <div class="card-body mt-1">
-                                            <div class="row">
+                                        {{!-- <div class="card-body mt-1"> --}}
+                                            <div class="row border mx-0">
                                                 <div class="col-12 text-center">
                                                     <p>Party: </p>
                                                 </div>
@@ -37,7 +40,7 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        {{!-- </div> --}}
                                     </div>
                                     {{!-- senator 1 card end --}}
 
@@ -47,14 +50,15 @@
 
 
                                     {{!-- senator 2 card start --}}
-                                    <div class="card rounded-0 p-2 rep-card" style="height: 100%;">
-                                        <div class="card-title text-center border-bottom">
-                                            <p>Senator </p>
+                                    <div class="card border-0 rounded-0 p-0 rep-card" style="height: 100%;">
+                                        <div class="row mx-0 text-center text-white p-2 e-blue">
+                                            <div class="col-12">
                                             <p> {{senator2.name}}</p>
-                                            <hr />
+                                            <p>Senator </p>
+                                            </div>
                                         </div>
-                                        <div class="card-body">
-                                            <div class="row">
+                                        {{!-- <div class="card-body"> --}}
+                                            <div class="row border mx-0">
                                                 <div class="col-12 text-center">
                                                     <p>Party:</p>
                                                 </div>
@@ -68,7 +72,7 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        {{!-- </div> --}}
                                     </div>
                                     {{!-- senator 2 card end --}}
 
@@ -77,14 +81,17 @@
                                 <div class="col-12 col-sm-4 p-3">
 
                                     {{!-- senator 3 card start --}}
-                                    <div class="card rounded-0 p-2 rep-card" style="height: 100%;">
-                                        <div class="card-title text-center">
-                                            <p>Representative </p>
+                                    <div class="card border-0 rounded-0 p-0 rep-card" style="height: 100%;">
+                                        <div class="row mx-0 text-center text-white p-2 e-blue">
+                                            <div class="col-12">
+                                            
                                             <p> {{houseRep.name}}</p>
-                                            <hr />
+                                            <p>Representative </p>
+                                            </div>
+                                           
                                         </div>
-                                        <div class="card-body">
-                                            <div class="row">
+                                        {{!-- <div class="card-body"> --}}
+                                            <div class="row mx-0 border">
                                                 <div class="col-12 text-center">
                                                     <p>Party: </p>
                                                 </div>
@@ -98,7 +105,7 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        {{!-- </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -147,54 +154,54 @@
                                                     <div class="form-row">
                                                         <div class="form-group col-12 col-sm-6">
                                                             <label for="firstName">First Name</label>
-                                                            <input type="text" class="form-control" id="firstName"
+                                                            <input type="text" class="form-control rounded-0 border-top-0 border-right-0 border-left-0 border-bottom" id="firstName"
                                                                 value="{{firstName}}">
                                                         </div>
                                                         <div class="form-group col-12 col-sm-6">
                                                             <label for="lastName">Last Name</label>
-                                                            <input type="text" class="form-control" id="last_name"
+                                                            <input type="text" class="form-control rounded-0 border-top-0 border-right-0 border-left-0 border-bottom" id="last_name"
                                                                 value="{{lastName}}">
                                                         </div>
                                                         <div class="form-group col-12 col-sm-12">
                                                             <label for="email">Email</label>
-                                                            <input type="email" class="form-control" id="email"
+                                                            <input type="email" class="form-control rounded-0 border-top-0 border-right-0 border-left-0 border-bottom" id="email"
                                                                 value="{{email}}">
                                                         </div>
                                                         <div class="form-group col-12 col-sm-6">
                                                             <label for="password1">Password</label>
-                                                            <input type="password" class="form-control" id="password1"
+                                                            <input type="password" class="form-control rounded-0 border-top-0 border-right-0 border-left-0 border-bottom" id="password1"
                                                                 value="Password">
                                                         </div>
                                                         <div class="form-group col-12 col-sm-6">
                                                             <label for="password1">Re-Enter Password</label>
-                                                            <input type="password" class="form-control" id="password2"
+                                                            <input type="password" class="form-control rounded-0 border-top-0 border-right-0 border-left-0 border-bottom" id="password2"
                                                                 value="Password">
                                                         </div>
                                                         <div class="form-group col-12 col-sm-12">
                                                             <label for="address">Address</label>
-                                                            <input type="text" class="form-control" id="address"
+                                                            <input type="text" class="form-control rounded-0 border-top-0 border-right-0 border-left-0 border-bottom" id="address"
                                                                 value="{{address1}}">
                                                         </div>
                                                         <div class="form-group col-12 col-sm-12">
                                                             <label for="address2">Address 2</label>
-                                                            <input type="text" class="form-control" id="{{address2}}"
+                                                            <input type="text" class="form-control rounded-0 border-top-0 border-right-0 border-left-0 border-bottom" id="{{address2}}"
                                                                 value="{{address2}}">
                                                         </div>
                                                         <div class="form-group col-12 col-sm-6">
                                                             <label for="city">City</label>
-                                                            <input type="text" class="form-control" id="city"
+                                                            <input type="text" class="form-control rounded-0 border-top-0 border-right-0 border-left-0 border-bottom" id="city"
                                                                 value="{{city}}">
                                                         </div>
                                                         <div class="form-group col-12 col-sm-4">
                                                             <label for="state">State</label>
-                                                            <select id="state" class="form-control" value="{{state}}">
+                                                            <select id="state" class="form-control rounded-0 border-top-0 border-right-0 border-left-0 border-bottom" value="{{state}}">
                                                                 <option selected>Choose...</option>
                                                                 <option>Alabama</option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group col-12 col-sm-2">
                                                             <label for="zip">Zip</label>
-                                                            <input type="text" class="form-control" id="zip"
+                                                            <input type="text" class="form-control rounded-0 border-top-0 border-right-0 border-left-0 border-bottom" id="zip"
                                                                 value="{{zip}}">
                                                         </div>
                                                     </div>
